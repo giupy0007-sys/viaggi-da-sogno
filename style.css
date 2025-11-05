@@ -1487,3 +1487,162 @@ footer{
 @keyframes growBar {
   to { transform: scaleX(1); }
 }
+/* =======================
+   RESPONSIVE – TABLET
+   Breakpoint ~ 1024px
+   ======================= */
+@media (max-width: 1024px){
+
+  /* Header/Nav più compatto */
+  header{ padding: 12px 22px; }
+  .site-logo{ height: 52px; }
+  header h1{ font-size: 1.15rem; }
+
+  /* Hero un po’ più bassa */
+  .hero,
+  .hero-prenotazione,
+  .hero-destinazioni,
+  .hero-small,
+  .page-hero,
+  .contact-hero,
+  .booking-hero{
+    min-height: 60vh;
+    padding-top: 96px;
+  }
+  .hero h2{ font-size: 2.4rem; }
+  .hero p{ font-size: 1.15rem; }
+
+  /* Cards home → 2 colonne */
+  .cards{
+    grid-template-columns: repeat(2, minmax(280px,1fr));
+    gap: 24px;
+    padding: 40px 32px;
+    max-width: 980px;
+  }
+  .card img{ height: 200px; }
+
+  /* “Perché viaggiare con noi” → 2 colonne */
+  .whyus{ padding: 64px 32px; }
+  .whyus-grid{ grid-template-columns: repeat(2,1fr); }
+
+  /* Destinazioni (lista) → 2 colonne */
+  .destinazioni-grid{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(280px,1fr));
+    gap: 24px;
+    padding: 24px 32px;
+  }
+  .destinazione img{ height: 210px; object-fit: cover; }
+
+  /* Moduli prenotazione/contatti a 2 colonne → stack morbido */
+  .prenotazione-container,
+  .contatti{
+    padding: 24px 22px;
+  }
+  .prenotazione-form,
+  .form-contatto{
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  /* Griglie personalizzate che hai usato in prenotazione (se presenti) */
+  .booking-grid{
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* media: più spazio al form */
+    gap: 24px;
+  }
+}
+
+/* =======================
+   RESPONSIVE – MOBILE
+   Breakpoint ~ 680px
+   ======================= */
+@media (max-width: 680px){
+
+  /* Nav: scorrevole orizzontale (no hamburger, niente JS) */
+  header{ padding: 10px 14px; }
+  .site-logo{ height: 44px; }
+  header h1{
+    font-size: 1.02rem;
+    max-width: 56vw;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  header nav{
+    display: block;
+    overflow-x: auto; white-space: nowrap;
+    margin-left: 6px; -webkit-overflow-scrolling: touch;
+  }
+  header nav a{
+    display: inline-block;
+    background: rgba(255,255,255,.55);
+    margin: 0 4px; padding: 7px 10px; border-radius: 999px;
+  }
+
+  /* Hero più bassa e testi ridimensionati */
+  .hero,
+  .hero-prenotazione,
+  .hero-destinazioni,
+  .hero-small,
+  .page-hero,
+  .contact-hero,
+  .booking-hero{
+    min-height: 48vh;
+    padding-top: 92px;
+  }
+  .hero h2{ font-size: 2rem; margin-bottom: 8px; }
+  .hero p{ font-size: 1rem; margin-bottom: 16px; }
+  .btn-large{ min-height: 44px; padding: 11px 16px; }
+
+  /* Cards home → 1 colonna */
+  .cards{
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 26px 18px;
+    max-width: 580px;
+  }
+  .card img{ height: 180px; }
+  .card h4{ font-size: 1.35rem; }
+
+  /* Titolo sezione destinazioni più vistoso ma corto */
+  .dest-title{ padding: 56px 18px 26px; }
+  .dest-title h2{ font-size: 2rem; }
+  .dest-title h2 span{ font-size: 1.9rem; }
+  .dest-title p{ font-size: 1rem; margin-top: 8px; }
+
+  /* “Perché viaggiare con noi” → 1 colonna */
+  .whyus{ padding: 44px 18px; }
+  .whyus-grid{ grid-template-columns: 1fr; gap: 14px; }
+
+  /* Destinazioni (lista) → 1 colonna */
+  .destinazioni-grid{
+    grid-template-columns: 1fr;
+    padding: 18px;
+    gap: 18px;
+  }
+  .destinazione img{ height: 195px; }
+
+  /* Prenotazione/Contatti: tutto a colonna */
+  .booking-grid{ grid-template-columns: 1fr; }
+  .booking-media{ order: 2; }    /* immagini sotto, form sopra (se usi questa struttura) */
+  .booking-form{ order: 1; }
+
+  .prenotazione-form input,
+  .prenotazione-form select,
+  .prenotazione-form textarea,
+  .form-contatto input,
+  .form-contatto textarea,
+  .form-contatto select{
+    width: 100%;
+    min-height: 44px;
+    font-size: 1rem;
+  }
+  .row-2, .row-3{ display: grid; grid-template-columns: 1fr; gap: 12px; }
+
+  /* Team / Chi siamo / Recensioni: carte a colonna */
+  .team, .reviews, .chi-siamo-content .container{
+    display: grid; grid-template-columns: 1fr; gap: 16px;
+  }
+
+  /* Footer più compatto */
+  footer{ padding: 18px; font-size: .95rem; }
+}
