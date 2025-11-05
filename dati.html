@@ -3,127 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home - Viaggi e Destinazioni da Sogno</title>
+  <title>Prenotazione - Viaggi e Destinazioni da Sogno</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header class="nav-glass">
     <div class="logo-container">
       <img src="img/logo.png" alt="Logo Viaggi e Destinazioni da Sogno" class="site-logo">
       <h1>Viaggi e Destinazioni da Sogno</h1>
     </div>
-   <nav>
-  <a href="index.html">Home</a>
-  <a href="destinazioni.html">Destinazioni</a>
-  <a href="dati.html">Prenotazione</a>
-  <a href="contatti.html">Contatti</a>
-</nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="destinazioni.html">Destinazioni</a>
+      <a href="dati.html" class="active">Prenotazione</a>
+      <a href="contatti.html">Contatti</a>
+    </nav>
+  </header>
 
-  </header>  
-
-<!-- HERO Prenotazione (senza step) -->
-<section class="booking-hero">
-  <div class="booking-hero__inner">
-    <h2>Prenota il tuo viaggio da sogno</h2>
-    <p>Compila i dettagli: noi pensiamo al resto. Assistenza dedicata prima, durante e dopo il viaggio.</p>
+  <!-- NOTIFICA SUCCESSO -->
+  <div id="inviata" class="notice success">
+    <div class="notice-content">
+      <span style="font-size:22px">✅</span>
+      <strong>Richiesta inviata!</strong>
+      <p>Ti contattiamo entro 24 ore con la proposta migliore per il tuo viaggio.</p>
+      <a class="notice-close" href="#">Chiudi</a>
+    </div>
   </div>
-</section>
 
-<!-- LAYOUT a 2 colonne: immagini + form (NO JS) -->
-<section class="booking">
-  <div class="booking-grid">
-    <!-- Colonna Immagini -->
-    <aside class="booking-media">
-      <div class="media-large"
-           style="background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=2000&q=85');"></div>
-      <div class="media-small">
-        <div class="media"
-             style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85');"></div>
-        <div class="media"
-             style="background-image:url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=85');"></div>
-      </div>
+  <!-- HERO -->
+  <section class="booking-hero">
+    <div class="booking-hero__inner">
+      <h2>Prenota il tuo viaggio da sogno</h2>
+      <p>Compila i dettagli: noi pensiamo al resto. Assistenza dedicata prima, durante e dopo il viaggio.</p>
+    </div>
+  </section>
 
-      <ul class="trust">
-        <li>✓ Pagamenti sicuri</li>
-        <li>✓ Assistenza 24/7</li>
-        <li>✓ Partner certificati</li>
-      </ul>
-    </aside>
+  <!-- LAYOUT -->
+  <section class="booking">
+    <div class="booking-grid">
 
-    <!-- Colonna Form: SUBMIT reale -->
-    <!-- Se vuoi una pagina di ringraziamento, crea thankyou.html e lascia action="thankyou.html".
-         Altrimenti metti action="#" -->
-    <form class="booking-form" action="thankyou.html" method="post" novalidate>
-      <h3>Richiesta di Prenotazione</h3>
-
-      <div class="row-2">
-        <div class="field">
-          <label for="destinazione">Destinazione</label>
-          <select id="destinazione" name="destinazione" required>
-            <option value="">— Seleziona —</option>
-            <option>Maldive</option>
-            <option>New York</option>
-            <option>Parigi</option>
-            <option>Tokyo</option>
-          </select>
+      <!-- IMMAGINI -->
+      <aside class="booking-media">
+        <div class="media-large" style="background-image:url('img/bali.jpg');"></div>
+        <div class="media-small">
+          <div class="media" style="background-image:url('img/maldive.jpg');"></div>
+          <div class="media" style="background-image:url('img/zanzibar.jpg');"></div>
         </div>
-        <div class="field">
-          <label for="persone">Viaggiatori</label>
-          <select id="persone" name="persone" required>
-            <option value="">—</option>
-            <option>1</option><option>2</option><option>3</option>
-            <option>4</option><option>5+</option>
-          </select>
+
+        <ul class="trust">
+          <li>✓ Pagamenti sicuri</li>
+          <li>✓ Assistenza 24/7</li>
+          <li>✓ Partner certificati</li>
+        </ul>
+      </aside>
+
+      <!-- FORM -->
+      <form class="booking-form" action="#inviata" method="get" novalidate>
+        <h3>Richiesta di Prenotazione</h3>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="destinazione">Destinazione</label>
+            <select id="destinazione" name="destinazione" required>
+              <option value="">— Seleziona una destinazione —</option>
+
+              <optgroup label="Mare & Relax">
+                <option>Maldive</option>
+                <option>Seychelles</option>
+                <option>Zanzibar</option>
+                <option>Santorini</option>
+                <option>Bali</option>
+              </optgroup>
+
+              <optgroup label="Città & Cultura">
+                <option>New York</option>
+                <option>Parigi</option>
+                <option>Londra</option>
+                <option>Dubai</option>
+                <option>Tokyo</option>
+              </optgroup>
+
+              <optgroup label="Avventura & Natura">
+                <option>Islanda</option>
+                <option>Safari in Kenya</option>
+              </optgroup>
+
+              <option>Altro (specifica nelle note)</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="persone">Viaggiatori</label>
+            <select id="persone" name="persone" required>
+              <option value="">—</option>
+              <option>1</option><option>2</option><option>3</option>
+              <option>4</option><option>5+</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-      <div class="row-2">
-        <div class="field">
-          <label for="checkin">Partenza</label>
-          <input id="checkin" name="checkin" type="date" required>
+        <div class="row-2">
+          <div class="field">
+            <label for="checkin">Partenza</label>
+            <input id="checkin" name="checkin" type="date" required>
+          </div>
+          <div class="field">
+            <label for="checkout">Ritorno</label>
+            <input id="checkout" name="checkout" type="date" required>
+          </div>
         </div>
-        <div class="field">
-          <label for="checkout">Ritorno</label>
-          <input id="checkout" name="checkout" type="date" required>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="nome">Nome e Cognome</label>
+            <input id="nome" name="nome" type="text" placeholder="Mario Rossi" required>
+          </div>
+          <div class="field">
+            <label for="telefono">Telefono</label>
+            <input id="telefono" name="telefono" type="tel" placeholder="+39 345 678 9012" required>
+          </div>
         </div>
-      </div>
 
-      <div class="row-2">
         <div class="field">
-          <label for="nome">Nome e Cognome</label>
-          <input id="nome" name="nome" type="text" placeholder="Mario Rossi" required>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="nome@esempio.it" required>
         </div>
+
         <div class="field">
-          <label for="telefono">Telefono</label>
-          <input id="telefono" name="telefono" type="tel" placeholder="+39 345 678 9012" required>
+          <label for="messaggio">Richieste / Preferenze</label>
+          <textarea id="messaggio" name="messaggio" rows="4" placeholder="Hotel fronte mare, camera tripla, tour guidato…"></textarea>
         </div>
-      </div>
 
-      <div class="field">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="nome@esempio.it" required>
-      </div>
+        <label class="consenso">
+          <input type="checkbox" required>
+          Acconsento al trattamento dei dati per la gestione della richiesta.
+        </label>
 
-      <div class="field">
-        <label for="messaggio">Richieste / Preferenze</label>
-        <textarea id="messaggio" name="messaggio" rows="4" placeholder="Hotel fronte mare, camera tripla, tour guidato…"></textarea>
-      </div>
+        <button type="submit" class="btn-submit">Invia richiesta</button>
+        <p class="note-privacy">Nessun addebito ora. Ti contatteremo per confermare dettagli e quotazione.</p>
 
-      <label class="consenso" style="margin-top:10px;">
-        <input type="checkbox" required>
-        Acconsento al trattamento dei dati per la gestione della richiesta.
-      </label>
-
-      <button type="submit" class="btn-submit">Invia richiesta</button>
-      <p class="note-privacy">Nessun addebito ora. Ti contatteremo per confermare dettagli e quotazione.</p>
-    </form>
-  </div>
-</section>
-
-
+      </form>
+    </div>
+  </section>
 
   <footer>
     <p>&copy; 2025 Viaggi e Destinazioni da Sogno - La tua prossima avventura inizia qui 🌍</p>
   </footer>
+<script>
+  // Legge il valore della destinazione dalla URL
+  const params = new URLSearchParams(window.location.search);
+  const destinazione = params.get("dest");
+
+  if (destinazione) {
+    const select = document.getElementById("destinazione");
+    for (let option of select.options) {
+      if (option.text.toLowerCase() === destinazione.toLowerCase()) {
+        option.selected = true;
+        break;
+      }
+    }
+  }
+</script>
+
 </body>
 </html>
