@@ -1646,3 +1646,51 @@ footer{
   /* Footer più compatto */
   footer{ padding: 18px; font-size: .95rem; }
 }
+/* ===== Success notice (CSS only) ===== */
+.notice{
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translate(-50%, -12px);
+  width: min(680px, calc(100% - 32px));
+  background: linear-gradient(135deg, #1A5276, #1383b3);
+  color: #fff;
+  padding: 14px 16px;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.22);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .35s ease, opacity .35s ease;
+}
+.notice .notice-content{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.notice strong{ font-family: 'Playfair Display', serif; font-size: 1.05rem; }
+.notice p{ margin: 0; opacity: .95; }
+.notice-close{
+  margin-left: auto;
+  background: rgba(255,255,255,.18);
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: background .25s ease;
+}
+.notice-close:hover{ background: rgba(255,255,255,.28); }
+
+/* mostra il banner quando l'ancora #inviata è nell'URL */
+:target.notice{
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+/* mobile */
+@media (max-width: 680px){
+  .notice .notice-content{ align-items: flex-start; }
+  .notice-close{ margin-left: 0; }
+}
