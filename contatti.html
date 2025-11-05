@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti - Viaggi e Destinazioni da Sogno</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="nav-glass">
+    <div class="logo-container">
+      <img src="img/logo.png" alt="Logo Viaggi e Destinazioni da Sogno" class="site-logo">
+      <h1>Viaggi e Destinazioni da Sogno</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="destinazioni.html">Destinazioni</a>
+      <a href="dati.html">Prenotazione</a>
+      <a href="contatti.html" class="active">Contatti</a>
+    </nav>
+  </header>
+
+  <main>
+  <!-- HERO Contatti -->
+  <section class="contact-hero">
+    <h2>Parla con noi</h2>
+    <p>Consulenza dedicata per creare il viaggio su misura per te.</p>
+  </section>
+
+  <!-- GRID 2 COLONNE: Info + Form -->
+  <section class="contact-page">
+    <div class="contact-grid">
+
+      <!-- Colonna INFO -->
+      <aside class="contact-card">
+        <h3>Contatti & Sede</h3>
+
+        <ul class="contact-list">
+          <li>
+            <span class="label">📍 Indirizzo</span>
+            <span>Viale Magna Grecia, 74121 Taranto (TA)</span>
+          </li>
+          <li>
+            <span class="label">📞 Telefono</span>
+            <a href="tel:+39061234567">+39 06 1234567</a>
+          </li>
+          <li>
+            <span class="label">📧 Email</span>
+            <a href="mailto:info@viaggidasogno.it">info@viaggidasogno.it</a>
+          </li>
+        </ul>
+
+        <div class="cta-stack">
+          <a class="btn-pill" href="tel:+39061234567">Chiama ora</a>
+          <a class="btn-pill btn-alt" href="mailto:info@viaggidasogno.it">Scrivici via email</a>
+        </div>
+
+        <div class="hours">
+          <h4>Orari</h4>
+          <ul>
+            <li><span>Lun–Ven</span><span>09:00–13:00 / 17:00–20:30</span></li>
+            <li><span>Sabato</span><span>09:00–13:00</span></li>
+            <li><span>Domenica</span><span>Chiuso</span></li>
+          </ul>
+        </div>
+
+        <div class="trust-minis">
+          <span>✓ Consulenti certificati</span>
+          <span>✓ Assistenza 24/7</span>
+          <span>✓ Pagamenti sicuri</span>
+        </div>
+      </aside>
+
+      <!-- Colonna FORM -->
+      <section class="contact-form-card">
+        <h3>Scrivici un messaggio</h3>
+        <form class="contact-form" action="thankyou.html" method="post" novalidate>
+          <div class="row-2">
+            <div class="field">
+              <label for="nome">Nome e Cognome</label>
+              <input type="text" id="nome" name="nome" placeholder="Mario Rossi" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="nome@esempio.it" required>
+            </div>
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="telefono">Telefono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+39 345 678 9012">
+            </div>
+            <div class="field">
+              <label for="tema">Motivo del contatto</label>
+              <select id="tema" name="tema" required>
+                <option value="">— Seleziona —</option>
+                <option>Preventivo viaggio</option>
+                <option>Assistenza prenotazione</option>
+                <option>Collaborazioni</option>
+                <option>Altro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="messaggio">Messaggio</label>
+            <textarea id="messaggio" name="messaggio" rows="5" placeholder="Raccontaci la tua idea di viaggio…"></textarea>
+          </div>
+
+          <label class="consenso">
+            <input type="checkbox" required>
+            Acconsento al trattamento dei dati per la gestione della richiesta.
+          </label>
+
+          <button type="submit" class="btn-submit">Invia messaggio</button>
+          <p class="note-privacy">Rispondiamo entro 24h (giorni lavorativi).</p>
+        </form>
+      </section>
+    </div>
+
+    <!-- MAPPA / SEDE -->
+    <div class="contact-map">
+      <!-- Sostituisci il src con la tua mappa Google se vuoi -->
+      <iframe
+        title="Mappa — Viaggi e Destinazioni da Sogno"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=Viale%20Magna%20Grecia%2074121%20Taranto&t=&z=14&ie=UTF8&iwloc=&output=embed">
+      </iframe>
+    </div>
+
+    <div class="contact-faq">
+      <h3>Domande frequenti</h3>
+
+      <details>
+        <summary>Quanto tempo impiegate a rispondere?</summary>
+        <p>Di norma entro 24 ore lavorative. Per urgenze usa il telefono indicato.</p>
+      </details>
+
+      <details>
+        <summary>Posso prenotare anche senza venire in agenzia?</summary>
+        <p>Sì, gestiamo tutto da remoto con contratti digitali e pagamenti sicuri.</p>
+      </details>
+
+      <details>
+        <summary>Fate viaggi su misura?</summary>
+        <p>Sì, è la nostra specialità: itinerari personalizzati in base a budget e preferenze.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+
+  <footer>
+    <p>&copy; 2025 Viaggi e Destinazioni da Sogno - Tutti i diritti riservati</p>
+  </footer>
+
+</body>
+</html>
